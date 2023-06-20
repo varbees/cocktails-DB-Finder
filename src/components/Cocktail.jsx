@@ -12,7 +12,13 @@ const Cocktail = ({ image, id, drink, glass, info }) => {
       <div className='cocktail-footer'>
         <h3>{drink}</h3>
         <h4>{glass}</h4>
-        <p>{info}</p>
+        {info === 'Alcoholic' ? (
+          <p className='text-primary'>{info}</p>
+        ) : (
+          <p className='text-primary' style={{ color: '#4C3285' }}>
+            {info}
+          </p>
+        )}
         <Link
           to={`/cocktail/${id}`}
           className='btn btn-primary btn-details'
